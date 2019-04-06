@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_cmp_rb_op_impl_step">
+    <sn_cmp_rb_op_impl_step action="INSERT_OR_UPDATE">
+        <capi_interface display_value="Compute Interface">c7688c340b3222004b1b812f15673ae7</capi_interface>
+        <capi_method display_value="ResizeNode">9368cc340b3222004b1b812f15673a1f</capi_method>
+        <capi_version>1.0</capi_version>
+        <condition/>
+        <depends_on/>
+        <enabled>true</enabled>
+        <force_async>false</force_async>
+        <interface/>
+        <interface_operation/>
+        <name>Compute Interface.ResizeNode</name>
+        <operationimpl display_value="Resize Instance">a49f8b6adb2077c01e2b7646bf961975</operationimpl>
+        <order>2</order>
+        <owner_type>1</owner_type>
+        <parent_step/>
+        <parentstep/>
+        <product_type/>
+        <provider>aws-ec2</provider>
+        <provider_type/>
+        <sys_class_name>sn_cmp_rb_op_impl_step</sys_class_name>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-04 20:53:10</sys_created_on>
+        <sys_id>8930d7aadb2077c01e2b7646bf96198f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Compute Interface.ResizeNode</sys_name>
+        <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
+        <sys_update_name>sn_cmp_rb_op_impl_step_8930d7aadb2077c01e2b7646bf96198f</sys_update_name>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-04 20:55:49</sys_updated_on>
+    </sn_cmp_rb_op_impl_step>
+</record_update>

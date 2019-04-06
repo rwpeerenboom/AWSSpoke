@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_step_instance">
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Get Instance Status">8b8d80c7dbe4b7c01e2b7646bf961909</action>
+        <cid>e39161d8-cd50-4139-8cd3-64e0586cc02b</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Handle Response</label>
+        <order>4</order>
+        <outputs/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_class_name>sys_hub_step_instance</sys_class_name>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:44</sys_created_on>
+        <sys_id>949dc0c7dbe4b7c01e2b7646bf96191b</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Handle Response</sys_name>
+        <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
+        <sys_update_name>sys_hub_step_instance_949dc0c7dbe4b7c01e2b7646bf96191b</sys_update_name>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-06 14:32:25</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=949dc0c7dbe4b7c01e2b7646bf96191b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>949dc0c7dbe4b7c01e2b7646bf96191b</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>a89dc0c7dbe4b7c01e2b7646bf961941</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-06 14:32:25</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+    try{
+      	
+    	if (inputs.errorCode) {
+        	outputs.status = 'Error';
+        	outputs.errorMessage = inputs.errorMessage;
+        	gs.error("Error while updating instance state:" + inputs.errorMessage);
+    	} else {
+        	outputs.status = 'Success';
+          
+          	var obj = gs.xmlToJSON(inputs.response);
+			outputs.state = obj.DescribeInstanceStatusResponse.instanceStatusSet.item.instanceState.name;
+			outputs.code = obj.DescribeInstanceStatusResponse.instanceStatusSet.item.instanceState.code;
+          	//gs.info('Get Instance - response body: ' + JSON.stringify(obj));
+        }
+    }
+  	catch(e){
+    	gs.info('Error handling REST response: ' + e); 
+    }
+
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>949dc0c7dbe4b7c01e2b7646bf96191b</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>e49dc0c7dbe4b7c01e2b7646bf961941</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 19:59:46</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=949dc0c7dbe4b7c01e2b7646bf96191b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>949dc0c7dbe4b7c01e2b7646bf96191b</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>a09dc0c7dbe4b7c01e2b7646bf961941</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 19:59:46</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>errorCode</field>
+        <id>949dc0c7dbe4b7c01e2b7646bf96191b</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>e49dc0c7dbe4b7c01e2b7646bf961942</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 19:59:46</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_949dc0c7dbe4b7c01e2b7646bf96191b</table>
+        <value>{{step[77bc7761-e504-4053-a19f-1e7227bdae08].error_code}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>errorMessage</field>
+        <id>949dc0c7dbe4b7c01e2b7646bf96191b</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>249dc0c7dbe4b7c01e2b7646bf961942</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 19:59:46</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_949dc0c7dbe4b7c01e2b7646bf96191b</table>
+        <value>{{step[77bc7761-e504-4053-a19f-1e7227bdae08].error_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>response</field>
+        <id>949dc0c7dbe4b7c01e2b7646bf96191b</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>a89dc0c7dbe4b7c01e2b7646bf961942</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 19:59:46</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_949dc0c7dbe4b7c01e2b7646bf96191b</table>
+        <value>{{step[77bc7761-e504-4053-a19f-1e7227bdae08].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>949dc0c7dbe4b7c01e2b7646bf96191b</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>649dc0c7dbe4b7c01e2b7646bf961941</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 19:59:46</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status</field>
+        <id>949dc0c7dbe4b7c01e2b7646bf96191b</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 19:59:46</sys_created_on>
+        <sys_id>6c9dc0c7dbe4b7c01e2b7646bf961942</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 19:59:46</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_949dc0c7dbe4b7c01e2b7646bf96191b</table>
+        <value>{{step[77bc7761-e504-4053-a19f-1e7227bdae08].status_code}}</value>
+    </sys_element_mapping>
+</record_update>

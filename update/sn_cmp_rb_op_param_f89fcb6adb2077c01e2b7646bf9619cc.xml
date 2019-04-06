@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_cmp_rb_op_param">
+    <sn_cmp_rb_op_param action="INSERT_OR_UPDATE">
+        <interface display_value="AWS Linux Server Interface">0cedcba7dbbf63001e2b7646bf96190b</interface>
+        <name>Location</name>
+        <operation display_value="Resize Instance">a89f8b6adb2077c01e2b7646bf961973</operation>
+        <order>200</order>
+        <sys_class_name>sn_cmp_rb_op_param</sys_class_name>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-04 20:50:25</sys_created_on>
+        <sys_id>f89fcb6adb2077c01e2b7646bf9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Location</sys_name>
+        <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
+        <sys_update_name>sn_cmp_rb_op_param_f89fcb6adb2077c01e2b7646bf9619cc</sys_update_name>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-04 20:50:25</sys_updated_on>
+        <type>1</type>
+    </sn_cmp_rb_op_param>
+</record_update>

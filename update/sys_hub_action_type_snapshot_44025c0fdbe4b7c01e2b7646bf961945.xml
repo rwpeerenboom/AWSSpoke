@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_action_type_snapshot">
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <annotation>0 : pending,
+16 : running,
+32 : shutting-down,
+48 : terminated,
+64 : stopping,
+80 : stopped</annotation>
+        <category display_value="EC2">290d3af1db64b7400be69ee6db961978</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description>This action assumes that the credential alias has been correctly set in a different configuration step</description>
+        <internal_name>get_instance_status</internal_name>
+        <label_cache>[{"name":"{{action.instanceid}}","label":"action➛instanceid","type":"action","ref":""},{"name":"{{step[77bc7761-e504-4053-a19f-1e7227bdae08].response_body}}","label":"step➛Send Message➛Response Body","type":"step","ref":""},{"name":"{{step[77bc7761-e504-4053-a19f-1e7227bdae08].status_code}}","label":"step➛Send Message➛Status Code","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].s}}","label":"step➛Handle Response➛s","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].st}}","label":"step➛Handle Response➛st","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].sta}}","label":"step➛Handle Response➛sta","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].stat}}","label":"step➛Handle Response➛stat","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].statu}}","label":"step➛Handle Response➛statu","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].status}}","label":"step➛Handle Response➛status","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].e}}","label":"step➛Handle Response➛e","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].er}}","label":"step➛Handle Response➛er","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].err}}","label":"step➛Handle Response➛err","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].erro}}","label":"step➛Handle Response➛erro","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].error}}","label":"step➛Handle Response➛error","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorM}}","label":"step➛Handle Response➛errorM","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorMe}}","label":"step➛Handle Response➛errorMe","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorMes}}","label":"step➛Handle Response➛errorMes","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorMess}}","label":"step➛Handle Response➛errorMess","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorMessa}}","label":"step➛Handle Response➛errorMessa","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorMessag}}","label":"step➛Handle Response➛errorMessag","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorMessage}}","label":"step➛Handle Response➛errorMessage","type":"step","ref":""},{"name":"{{step[77bc7761-e504-4053-a19f-1e7227bdae08].error_message}}","label":"step➛Send Message➛Error Message","type":"step","ref":""},{"name":"{{step[77bc7761-e504-4053-a19f-1e7227bdae08].error_code}}","label":"step➛Send Message➛Error Code","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].a}}","label":"step➛Sign Credential➛a","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].au}}","label":"step➛Sign Credential➛au","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].aut}}","label":"step➛Sign Credential➛aut","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].auth}}","label":"step➛Sign Credential➛auth","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].d}}","label":"step➛Sign Credential➛d","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].da}}","label":"step➛Sign Credential➛da","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].dat}}","label":"step➛Sign Credential➛dat","type":"step","ref":""},{"name":"{{step[5ac6a5f6-5edd-44da-960b-123395507ab9].date}}","label":"step➛Sign Credential➛date","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].p}}","label":"step➛Build Endpoint➛p","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].pa}}","label":"step➛Build Path and Set Vals➛pa","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].pat}}","label":"step➛Build Path and Set Vals➛pat","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].path}}","label":"step➛Build Path and Set Vals➛path","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].r}}","label":"step➛Build Path and Set Vals➛r","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].re}}","label":"step➛Build Path and Set Vals➛re","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].reg}}","label":"step➛Build Path and Set Vals➛reg","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].regi}}","label":"step➛Build Path and Set Vals➛regi","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].regio}}","label":"step➛Build Path and Set Vals➛regio","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].region}}","label":"step➛Build Path and Set Vals➛region","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].a}}","label":"step➛Build Path and Set Vals➛a","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].ac}}","label":"step➛Build Path and Set Vals➛ac","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].act}}","label":"step➛Build Path and Set Vals➛act","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].acti}}","label":"step➛Build Path and Set Vals➛acti","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].actio}}","label":"step➛Build Path and Set Vals➛actio","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].action}}","label":"step➛Build Path and Set Vals➛action","type":"step","ref":""},{"name":"{{step[8f8a1378-0523-4556-9e5e-00854b898c69].version}}","label":"step➛Build Path and Set Vals➛version","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].state}}","label":"step➛Handle Response➛state","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].c}}","label":"step➛Handle Response➛c","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].co}}","label":"step➛Handle Response➛co","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].cod}}","label":"step➛Handle Response➛cod","type":"step","ref":""},{"name":"{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].code}}","label":"step➛Handle Response➛code","type":"step","ref":""}]</label_cache>
+        <master>true</master>
+        <name>Get Instance Status</name>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Get Instance Status">8b8d80c7dbe4b7c01e2b7646bf961909</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 20:19:07</sys_created_on>
+        <sys_id>44025c0fdbe4b7c01e2b7646bf961945</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Get Instance Status</sys_name>
+        <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
+        <sys_update_name>sys_hub_action_type_snapshot_44025c0fdbe4b7c01e2b7646bf961945</sys_update_name>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-06 13:53:14</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=44025c0fdbe4b7c01e2b7646bf961945"/>
+    <sys_variable_value action="delete_multiple" query="document_key=44025c0fdbe4b7c01e2b7646bf961945"/>
+    <sys_element_mapping action="delete_multiple" query="id=44025c0fdbe4b7c01e2b7646bf961945"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>code</field>
+        <id>44025c0fdbe4b7c01e2b7646bf961945</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 20:31:19</sys_created_on>
+        <sys_id>3ac4d003db28b7c01e2b7646bf96193e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 20:31:19</sys_updated_on>
+        <table>var__m_sys_hub_action_output_44025c0fdbe4b7c01e2b7646bf961945</table>
+        <value>{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].code}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>errormessage</field>
+        <id>44025c0fdbe4b7c01e2b7646bf961945</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 20:19:12</sys_created_on>
+        <sys_id>1d029c0fdbe4b7c01e2b7646bf96193d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 20:19:12</sys_updated_on>
+        <table>var__m_sys_hub_action_output_44025c0fdbe4b7c01e2b7646bf961945</table>
+        <value>{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].errorMessage}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>state</field>
+        <id>44025c0fdbe4b7c01e2b7646bf961945</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 20:31:19</sys_created_on>
+        <sys_id>fac4d003db28b7c01e2b7646bf96193e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 20:31:19</sys_updated_on>
+        <table>var__m_sys_hub_action_output_44025c0fdbe4b7c01e2b7646bf961945</table>
+        <value>{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].state}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status</field>
+        <id>44025c0fdbe4b7c01e2b7646bf961945</id>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-04-05 20:19:12</sys_created_on>
+        <sys_id>dd029c0fdbe4b7c01e2b7646bf96193d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-04-05 20:19:12</sys_updated_on>
+        <table>var__m_sys_hub_action_output_44025c0fdbe4b7c01e2b7646bf961945</table>
+        <value>{{step[e39161d8-cd50-4139-8cd3-64e0586cc02b].status}}</value>
+    </sys_element_mapping>
+</record_update>
