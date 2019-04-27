@@ -38,12 +38,12 @@
         <label>instanceid</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Change State">394863bddb28b7400be69ee6db9619f2</model>
-        <model_id>394863bddb28b7400be69ee6db9619f2</model_id>
-        <model_table>sys_hub_action_type_snapshot</model_table>
-        <name>var__m_sys_hub_action_input_394863bddb28b7400be69ee6db9619f2</name>
+        <model display_value="Create or Update Tag">870e88a1db0537000be69ee6db9619cf</model>
+        <model_id>870e88a1db0537000be69ee6db9619cf</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_870e88a1db0537000be69ee6db9619cf</name>
         <next_element/>
-        <order>1</order>
+        <order>0</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -59,16 +59,16 @@
         <staged>false</staged>
         <sys_class_name>sys_hub_action_input</sys_class_name>
         <sys_created_by>nick.ryan</sys_created_by>
-        <sys_created_on>2019-04-02 14:42:54</sys_created_on>
-        <sys_id>f14863bddb28b7400be69ee6db9619fc</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>var__m_sys_hub_action_input_394863bddb28b7400be69ee6db9619f2</sys_name>
+        <sys_created_on>2019-04-26 00:42:22</sys_created_on>
+        <sys_id>470e88a1db0537000be69ee6db9619d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>var__m_sys_hub_action_input_870e88a1db0537000be69ee6db9619cf</sys_name>
         <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
         <sys_policy/>
         <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
-        <sys_update_name>sys_hub_action_input_f14863bddb28b7400be69ee6db9619fc</sys_update_name>
+        <sys_update_name>sys_hub_action_input_470e88a1db0537000be69ee6db9619d3</sys_update_name>
         <sys_updated_by>nick.ryan</sys_updated_by>
-        <sys_updated_on>2019-04-09 13:51:54</sys_updated_on>
+        <sys_updated_on>2019-04-26 00:42:22</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
