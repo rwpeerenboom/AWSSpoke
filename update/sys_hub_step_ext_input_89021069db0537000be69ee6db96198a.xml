@@ -38,7 +38,7 @@
         <label>instanceid</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Build Path and Set Vals">85021069db0537000be69ee6db961985</model>
+        <model display_value="Build Path">85021069db0537000be69ee6db961985</model>
         <model_id>85021069db0537000be69ee6db961985</model_id>
         <model_table>sys_hub_step_instance</model_table>
         <name>var__m_sys_hub_step_ext_input_85021069db0537000be69ee6db961985</name>

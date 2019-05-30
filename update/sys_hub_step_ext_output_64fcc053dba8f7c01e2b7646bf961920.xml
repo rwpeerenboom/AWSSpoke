@@ -38,7 +38,7 @@
         <label>action</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Build Path and Set Vals">54fc8053dba8f7c01e2b7646bf9619ce</model>
+        <model display_value="Build Path">54fc8053dba8f7c01e2b7646bf9619ce</model>
         <model_id>54fc8053dba8f7c01e2b7646bf9619ce</model_id>
         <model_table>sys_hub_step_instance</model_table>
         <name>var__m_sys_hub_step_ext_output_54fc8053dba8f7c01e2b7646bf9619ce</name>

@@ -7,7 +7,7 @@
         <extended_outputs/>
         <icon/>
         <inputs/>
-        <label>Build Path and Set Vals</label>
+        <label>Build Path</label>
         <order>1</order>
         <outputs/>
         <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
@@ -15,14 +15,14 @@
         <sys_created_by>nick.ryan</sys_created_by>
         <sys_created_on>2019-04-02 14:42:55</sys_created_on>
         <sys_id>bd48a3bddb28b7400be69ee6db96190f</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>Build Path and Set Vals</sys_name>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Build Path</sys_name>
         <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
         <sys_policy/>
         <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
         <sys_update_name>sys_hub_step_instance_bd48a3bddb28b7400be69ee6db96190f</sys_update_name>
         <sys_updated_by>nick.ryan</sys_updated_by>
-        <sys_updated_on>2019-04-05 20:11:44</sys_updated_on>
+        <sys_updated_on>2019-05-30 21:34:57</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=bd48a3bddb28b7400be69ee6db96190f"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -33,9 +33,9 @@
         <sys_created_by>nick.ryan</sys_created_by>
         <sys_created_on>2019-04-02 14:42:56</sys_created_on>
         <sys_id>8a48a3bddb28b7400be69ee6db961940</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_updated_by>nick.ryan</sys_updated_by>
-        <sys_updated_on>2019-04-05 20:11:44</sys_updated_on>
+        <sys_updated_on>2019-05-30 21:34:57</sys_updated_on>
         <value>(function execute(inputs, outputs) {
 	try{
       	// EC2 API version
@@ -47,26 +47,8 @@
       	outputs.path = '?Action=' + inputs.action + '&amp;InstanceId.1=' + inputs.instanceid + '&amp;Version=' + version;
         
       	// Get the region of the instance ID specified in the action
-      	var vmGr = new GlideRecord('cmdb_ci_vm_instance');
-		vmGr.addQuery('object_id', inputs.instanceid);
-		vmGr.query();
-
-		if(vmGr.next()){
- 			var typeGr = new GlideRecord('cmdb_rel_type');
-    		typeGr.addQuery('name', 'Hosted on::Hosts');
-    		typeGr.query();
-    		if(typeGr.next()){
-      			var tsys = typeGr.sys_id;
-    		}
-    
-    		var relGr = new GlideRecord('cmdb_rel_ci');
-    		var strQuery = 'parent.sys_id='+vmGr.sys_id;
-    		strQuery = strQuery + '^type.sys_id='+tsys;
-    		relGr.query();
-    		if(relGr.next()){
-      			region = relGr.child.name;
-    		}
-		}
+      	var aws = new AWSspokeUtils();
+      	region = aws.getRegion(inputs.instanceid);
       	outputs.region = region;
     }
   	catch (e) {

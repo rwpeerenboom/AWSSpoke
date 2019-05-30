@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_aws_spoke.AWSspokeUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Utility methods to be used in AWS Spoke actions</description>
+        <name>AWSspokeUtils</name>
+        <script><![CDATA[var AWSspokeUtils = Class.create();
+AWSspokeUtils.prototype = {
+	initialize: function() {
+	},
+	
+	getRegion: function(resourceId){
+		var region = 'us-east-1';
+		
+		// lookup the virtual machine instance record
+		var vmGr = new GlideRecord('cmdb_ci_vm_instance');
+		vmGr.addEncodedQuery('object_id='+resourceId);
+		vmGr.query();
+		
+		if(vmGr.next()){
+			var tsys = '';
+			
+			// lookup the sys_id for the Hosted on::Hosts relationship
+			var typeGr = new GlideRecord('cmdb_rel_type');
+			typeGr.addEncodedQuery('name=Hosted on::Hosts');
+			typeGr.query();
+			if(typeGr.next()){
+				tsys = typeGr.sys_id;
+			}
+			
+			// Find the region based on the CMDB relationship of the VM instance
+			//   being hosted on a specific region
+			var rgnQuery = 'parent.sys_id='+vmGr.sys_id;
+			rgnQuery = rgnQuery + '^type.sys_id='+tsys;
+			
+			var relGr = new GlideRecord('cmdb_rel_ci');
+			relGr.addEncodedQuery(rgnQuery);
+			relGr.query();
+			if(relGr.next()){
+				region = relGr.child.name;
+			}
+		}
+		return region;
+	},
+	
+	getCFstack: function(stackId){
+			var stack = {};
+			var cft = '';
+			var tsys = '';
+		
+			stack.region = 'us-east-1';
+			
+			// lookup the sys_id for the Contains::Contained by relationship
+			var typeGr = new GlideRecord('cmdb_rel_type');
+			typeGr.addEncodedQuery('name=Contains::Contained by');
+			typeGr.query();
+			if(typeGr.next()){
+				tsys = typeGr.sys_id;
+			}
+			
+			// Find the cmdb_ci_aws_cloudformation_stack based on the CMDB relationship 
+			//   of the stack containing the CFT deployment
+			var stQuery = 'parent.sys_id='+stackId;
+			stQuery = stQuery + '^type.sys_id='+tsys;
+			
+			var relGr = new GlideRecord('cmdb_rel_ci');
+			relGr.addEncodedQuery(stQuery);
+			relGr.query();
+			if(relGr.next()){
+				cft = relGr.child.object_id;
+				// The object_id contains the region encoded within it, so parse it out
+				stack.region = cft.split(":")[3];
+			}
+		
+			stack.stackName = cft;
+			
+			return stack;
+		},
+		
+		type: 'AWSspokeUtils'
+	};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>nick.ryan</sys_created_by>
+        <sys_created_on>2019-05-30 17:48:12</sys_created_on>
+        <sys_id>898b7aa8db7df3c00be69ee6db961917</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AWSspokeUtils</sys_name>
+        <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
+        <sys_update_name>sys_script_include_898b7aa8db7df3c00be69ee6db961917</sys_update_name>
+        <sys_updated_by>nick.ryan</sys_updated_by>
+        <sys_updated_on>2019-05-30 19:26:08</sys_updated_on>
+    </sys_script_include>
+</record_update>

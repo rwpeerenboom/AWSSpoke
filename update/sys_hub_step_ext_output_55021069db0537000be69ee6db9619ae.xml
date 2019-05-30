@@ -38,12 +38,12 @@
         <label>value</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
-        <model display_value="Build Path and Set Vals">85021069db0537000be69ee6db961985</model>
+        <model display_value="Build Path">85021069db0537000be69ee6db961985</model>
         <model_id>85021069db0537000be69ee6db961985</model_id>
         <model_table>sys_hub_step_instance</model_table>
         <name>var__m_sys_hub_step_ext_output_85021069db0537000be69ee6db961985</name>
         <next_element/>
-        <order>5</order>
+        <order>4</order>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
@@ -61,14 +61,14 @@
         <sys_created_by>nick.ryan</sys_created_by>
         <sys_created_on>2019-04-26 00:59:43</sys_created_on>
         <sys_id>55021069db0537000be69ee6db9619ae</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>var__m_sys_hub_step_ext_output_85021069db0537000be69ee6db961985</sys_name>
         <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
         <sys_policy/>
         <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
         <sys_update_name>sys_hub_step_ext_output_55021069db0537000be69ee6db9619ae</sys_update_name>
         <sys_updated_by>nick.ryan</sys_updated_by>
-        <sys_updated_on>2019-04-26 00:59:43</sys_updated_on>
+        <sys_updated_on>2019-04-29 18:45:36</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

@@ -15,14 +15,14 @@
         <sys_created_by>nick.ryan</sys_created_by>
         <sys_created_on>2019-04-05 19:59:44</sys_created_on>
         <sys_id>949dc0c7dbe4b7c01e2b7646bf96191b</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Handle Response</sys_name>
         <sys_package display_value="AWS Spoke" source="x_snc_aws_spoke">e10c7a31db64b7400be69ee6db961944</sys_package>
         <sys_policy/>
         <sys_scope display_value="AWS Spoke">e10c7a31db64b7400be69ee6db961944</sys_scope>
         <sys_update_name>sys_hub_step_instance_949dc0c7dbe4b7c01e2b7646bf96191b</sys_update_name>
         <sys_updated_by>nick.ryan</sys_updated_by>
-        <sys_updated_on>2019-04-06 14:32:25</sys_updated_on>
+        <sys_updated_on>2019-04-29 15:47:49</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=949dc0c7dbe4b7c01e2b7646bf96191b"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -33,20 +33,20 @@
         <sys_created_by>nick.ryan</sys_created_by>
         <sys_created_on>2019-04-05 19:59:46</sys_created_on>
         <sys_id>a89dc0c7dbe4b7c01e2b7646bf961941</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_updated_by>nick.ryan</sys_updated_by>
-        <sys_updated_on>2019-04-06 14:32:25</sys_updated_on>
+        <sys_updated_on>2019-04-29 15:47:49</sys_updated_on>
         <value>(function execute(inputs, outputs) {
     try{
-      	
+      	var obj = gs.xmlToJSON(inputs.response);
     	if (inputs.errorCode) {
         	outputs.status = 'Error';
         	outputs.errorMessage = inputs.errorMessage;
-        	gs.error("Error while updating instance state:" + inputs.errorMessage);
+        	gs.error("Error while getting instance state: " + inputs.errorMessage);
+          	gs.error("Error response body: " + JSON.stringify(obj));
     	} else {
         	outputs.status = 'Success';
           
-          	var obj = gs.xmlToJSON(inputs.response);
 			outputs.state = obj.DescribeInstanceStatusResponse.instanceStatusSet.item.instanceState.name;
 			outputs.code = obj.DescribeInstanceStatusResponse.instanceStatusSet.item.instanceState.code;
           	//gs.info('Get Instance - response body: ' + JSON.stringify(obj));
